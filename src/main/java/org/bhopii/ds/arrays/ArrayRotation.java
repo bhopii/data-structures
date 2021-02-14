@@ -30,7 +30,15 @@ public class ArrayRotation {
 		reverseArray(arr, turns, length - 1);
 
 	}
-	
+	private static void reverseArray(int[] nums, int start, int end) {
+		while (start <= end) {
+			int temp = nums[start];
+			nums[start] = nums[end];
+			nums[end] = temp;
+			start++;
+			end--;
+		}
+	}
 	
 	/**
 	 * @param arr
@@ -48,15 +56,7 @@ public class ArrayRotation {
 
 	}
 
-	private static void reverseArray(int[] nums, int start, int end) {
-		while (start <= end) {
-			int temp = nums[start];
-			nums[start] = nums[end];
-			nums[end] = temp;
-			start++;
-			end--;
-		}
-	}
+
 
 	private static void printArray(int[] rotatedArr) {
 		for (int element : rotatedArr) {
