@@ -36,5 +36,58 @@ public class LinkedList {
 			currNode = currNode.next;
 		}
 	}
+	
+	public boolean hasLoop() {
+		Node slow, fast;
+		if((head == null) || (head.next==null)) {
+			return false;
+		}
+		
+		slow = head;
+//		ln2 = head.next;
+		fast = head.next;
+		
+
+		while(true) {
+			System.out.println("1. slow node " + slow.data);
+			System.out.println("1. fast node " + fast.data);
+			if(slow==fast) {
+				return true;
+			}
+			
+			if(slow.next == null) {
+				return false;
+			} else {
+				slow = slow.next;
+			}
+			System.out.println("2. slow node " + slow.data);
+			System.out.println("2. fast node " + fast.data);
+//			if(slow == fast) {
+//				return true;
+//			}
+			
+			if(fast.next == null) {
+				return false;
+			} else {
+				fast = fast.next;
+			}
+			System.out.println("3. slow node " + slow.data);
+			System.out.println("3. fast node " + fast.data);
+			
+			//This was my answer
+			if(slow == fast) {
+				return true;
+			}
+			
+			if(fast.next == null) {
+				return false;
+			} else {
+				fast = fast.next;
+			}
+			System.out.println("4. slow node " + slow.data);
+			System.out.println("4. fast node " + fast.data);
+			
+		}
+	}
 
 }
